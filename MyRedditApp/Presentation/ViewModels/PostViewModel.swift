@@ -26,4 +26,11 @@ class PostViewModel {
                 onCompletion(post)
             }
     }
+    
+    func checkBookmark(){
+        guard let post = self.post else {
+            return
+        }
+        post.saved = !post.saved
+    }
 }

@@ -48,7 +48,11 @@ class PostViewController: UIViewController {
     }
 
     @IBAction func bookmarkAction(_ sender: Any) {
-        bookmarkButton.isSelected = !bookmarkButton.isSelected
+        if let post = postViewModel.post {
+            bookmarkButton.isSelected = !bookmarkButton.isSelected
+            post.saved = bookmarkButton.isSelected
+        }
+        
     }
     
 }
